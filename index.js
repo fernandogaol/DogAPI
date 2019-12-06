@@ -29,7 +29,7 @@ function listenToInput() {
     const query = $(".js-query").val(); //stores value.
     if (query > 50) {
       return $(".js-results").html(
-        `<h1>Error: The max results is 50. Please try any number between 1-50.`
+        `<h1>Error: The max results are 50. Please try any number between 1-50.`
       );
     }
     getDogImages(query);
