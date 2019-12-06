@@ -17,6 +17,7 @@ function displayResults(responseJson) {
 
 function displayDogSearchData(image) {
   const results = image.message.map(item => displayResults(item)); //maps through getdogimages messages
+
   $(".js-results").html(results);
 
   $(".results").removeClass("hidden");
@@ -26,6 +27,11 @@ function listenToInput() {
   $(".js-search-form").submit(event => {
     event.preventDefault();
     const query = $(".js-query").val(); //stores value.
+    if (query > 50) {
+      return $(".js-results").html(
+        `<h1>Error: The max results is 50. Please try any number between 1-50.`
+      );
+    }
     getDogImages(query);
   });
 }
