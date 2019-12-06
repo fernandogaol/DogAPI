@@ -31,8 +31,9 @@ function listenToInput() {
       return $(".js-results").html(
         `<h1>Error: The max results are 50. Please try any number between 1-50.`
       );
+    } else {
+      getDogImages(query);
     }
-    getDogImages(query);
   });
 }
 
